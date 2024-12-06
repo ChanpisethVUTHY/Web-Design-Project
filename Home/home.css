@@ -1,0 +1,308 @@
+
+:root {
+  --primary-color: #c9a12a;
+  --background-color: #000;
+  --text-color: #fff;
+  --hover-color: #e59b32;
+  --gray: #d9d9d9;
+  --blue: #0400ff;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+body {
+  font-family: Arial, sans-serif;
+  color: var(--text-color);
+  background: var(--background-color);
+  overflow:scroll;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: var(--background-color);
+}
+
+.logo {
+  width: 80px;
+  border-radius: 50%;
+}
+
+.navbar {
+  display: flex;
+  gap: 2rem;
+  font-size: 22px;
+}
+
+.navbar a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: var(--hover-color);
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 22px;
+  
+}
+.icons a{
+  color: var(--gray);
+}
+
+#menu-btn {
+  display: none;
+}
+
+.dropdown {
+  position: relative;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 1rem;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: 0 4px 6px rgba(239, 236, 236, 0.722);
+}
+.dropdown-content a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 18px;
+  font-weight:300;
+}
+.dropdown-content a:hover {
+  color: var(--hover-color);
+}
+.dropdown-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+.dropdown:hover .dropdown-content {
+  display: flex;
+}
+
+
+ /* =================================hero section========================= */
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url('/Home/img/mutang.jpg') no-repeat center/cover;
+  text-align: center;
+  color: var(--text-color);
+  
+}
+
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: var(--gray);
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+ 
+}
+
+.book-btn, .learn-btn {
+  padding: 1rem 4rem;
+  border: none;
+  color:var(--text-color) ;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 2rem;
+}
+
+.learn-btn{
+  background:#D2CFC8;
+  opacity: 40%;
+  color: var(--text-color) ;
+}
+
+.book-btn{
+  background: var(--primary-color);
+  opacity: 40%;
+}
+
+.book-btn:hover{
+  background-color:#D2CFC8 ;
+}
+.learn-btn:hover {
+  background: var(--primary-color);
+  
+}
+
+/* ==========================statistics section========================== */
+
+.statistics {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  
+}
+.statistics h1{
+  font-size: 3rem;
+  padding: .5rem;
+  margin-bottom: 8rem;
+  
+}
+.statistics h2{
+  margin-bottom: 5rem;
+  color: var(--gray);
+}
+.stat-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-bottom: 26rem;
+}
+
+.stat-box {
+  background: var(--primary-color);
+  padding: 4rem;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+
+/* =============================Newsletter Section=========================  */
+
+
+.newsletter  {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  background: #111;
+  gap: 1rem;
+}
+.Email{
+  padding: 1rem 2rem;
+  
+}
+
+
+/* ==============================footer section============================= */
+
+footer {
+  
+  padding: 2rem;
+  text-align: center;
+  background: #111;
+  color: var(--text-color);
+}
+footer .contact{
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+footer .contact div i{
+  font-size: 2rem;
+}
+footer p{
+margin-bottom: 2rem;
+}
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .icons {
+    display: block;
+}
+  #menu-btn {
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: 200px;
+    flex-direction: column;
+    padding: 1rem;
+    transition: right 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+   
+  }
+  .navbar.active {
+    right: 0;
+  }
+  .dropdown-content {
+    position: relative;
+    box-shadow: none;
+    padding: 0;
+  }
+  .dropdown-content a {
+    display: flex;
+    font-size: 18px;
+    justify-content: center;
+    
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .navbar.active {
+    display: flex;
+}
+.hero {
+  height: 100vh;
+  width: 100vw;
+  
+}
+.hero h2 {
+    font-size: 1.5rem;
+}
+
+.hero p {
+    font-size: 1rem;
+}
+
+.stat-box {
+    width: 80px;
+}
+
+.newsletter input {
+    width: 80%;
+}
+}
